@@ -7,6 +7,16 @@ import com.badlogic.gdx.math.Vector2;
 public  class PulsacionesPantalla implements GestureDetector.GestureListener{
     public boolean one_pulsation;
     public boolean two_pulsation;
+    public int num_animacion;
+
+
+    public int getNum_animacion() {
+        return num_animacion;
+    }
+
+    public void setNum_animacion(int num_animacion) {
+        this.num_animacion = num_animacion;
+    }
 
     public boolean isOne_pulsation() {
         return one_pulsation;
@@ -50,6 +60,7 @@ public  class PulsacionesPantalla implements GestureDetector.GestureListener{
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
         System.out.println(("Correr"));
+        num_animacion=1;
         return false;
     }
 
@@ -57,7 +68,7 @@ public  class PulsacionesPantalla implements GestureDetector.GestureListener{
     @Override
     public boolean tap(float x, float y, int count, int button) {
         //contador
-
+        num_animacion=2;
         System.out.println(("Saltar"));
         return false;
     }

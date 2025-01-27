@@ -55,15 +55,30 @@ public class Main extends ApplicationAdapter {
         Gdx.input.setInputProcessor(gestureDetector);
 
 
+        if(pulsaciones.getNum_animacion()==1 || pulsaciones.getNum_animacion()==2){
+            batch.draw(
+                a.AnimacionPulsaciones(pulsaciones.getNum_animacion(), tiempoTotal),
+                a.getPosicionX(),
+                a.getPosicionY(),
+                a.getWidth(),
+                a.getHeight()
+            );
+        }else{
+            batch.draw(
+                a.AnimacionPulsaciones(pulsaciones.Pulsaciones(), tiempoTotal),
+                a.getPosicionX(),
+                a.getPosicionY(),
+                a.getWidth(),
+                a.getHeight()
+            );
+        }
 
 
-        batch.draw(
-            a.AnimacionPulsaciones(pulsaciones.Pulsaciones(), tiempoTotal),
-            a.getPosicionX(),
-            a.getPosicionY(),
-            a.getWidth(),
-            a.getHeight()
-        );
+
+
+
+
+
 
 
         batch.end();
