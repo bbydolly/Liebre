@@ -28,6 +28,7 @@ public class PulsacionesPantalla {
             setTwo_pulsation(Gdx.input.isTouched(2));
             System.out.println("ENTRA EN PULSACIONES");
 
+
             if (isOne_pulsation() & isTwo_pulsation()) {
                 System.out.println("DOS");
                 return 2;
