@@ -2,12 +2,11 @@ package io.bbydolly.Liebre;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
-import com.badlogic.gdx.utils.Logger;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 
@@ -20,6 +19,7 @@ public class Main extends ApplicationAdapter {
     private float tiempoTotal;
     private GestureDetector gesture;
     private PulsacionesPantalla pulsaciones;
+
 
 
 
@@ -50,15 +50,14 @@ public class Main extends ApplicationAdapter {
             Gdx.graphics.getHeight()
         );
 
-//        batch.draw(
-//            a.elegirAnimacion("estatico", tiempoTotal),
-//            a.getPosicionX(),
-//            a.getPosicionY(),
-//            a.getWidth(),
-//            a.getHeight()
-//        );
+        //Le añado el listener de eventos de mouse
+        GestureDetector gestureDetector = new GestureDetector(new PulsacionesPantalla());
+        Gdx.input.setInputProcessor(gestureDetector);
 
-                batch.draw(
+
+
+
+        batch.draw(
             a.AnimacionPulsaciones(pulsaciones.Pulsaciones(), tiempoTotal),
             a.getPosicionX(),
             a.getPosicionY(),
@@ -66,8 +65,6 @@ public class Main extends ApplicationAdapter {
             a.getHeight()
         );
 
-        //Te dice si se está tocando la pantalla
-        //int numero_pulsaciones=pulsaciones.Pulsaciones();
 
         batch.end();
     }
@@ -77,4 +74,8 @@ public class Main extends ApplicationAdapter {
         batch.dispose();
         conejo.dispose();
     }
+
+
+
+
 }

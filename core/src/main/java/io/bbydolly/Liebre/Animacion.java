@@ -5,8 +5,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.math.Vector2;
 
-public class Animacion {
+public class Animacion  {
     //Texturas
     public Texture conejo1 = new Texture("bunny-Sheet.png");
     public TextureRegion texturaConejo1Correr[];
@@ -171,6 +173,8 @@ public class Animacion {
         return null;
 
     }
+
+
 }
 
 
